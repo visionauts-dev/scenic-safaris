@@ -1,34 +1,19 @@
-import { useState } from 'react';
-import { Phone, Mail, MapPin, MessageSquare, Send } from 'lucide-react';
+import { Phone, Mail, MapPin, MessageSquare } from 'lucide-react';
+
+const quickMessages = [
+  { label: '🗺️ Plan a Tour Package', text: 'Hi, I would like to plan a tour package. Can you help me?' },
+  { label: '🕌 Book a Pilgrimage Tour', text: 'Hi, I am interested in booking a pilgrimage tour. Please share details.' },
+  { label: '🚗 Book a Cab / Taxi', text: 'Hi, I need to book a cab/taxi. Can you provide details?' },
+  { label: '💬 Get a Free Quote', text: 'Hi, I would like to get a free quote for my trip.' },
+];
 
 export function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // In a real application, this would submit to a backend
-    alert('Thank you for your message! We will get back to you soon.');
-    setFormData({ name: '', email: '', phone: '', message: '' });
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
   return (
     <div className="min-h-screen bg-[var(--beige)]">
       {/* Hero Section */}
       <section className="bg-[var(--deep-blue)] text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl mb-4">Contact Us</h1>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl mb-4">Contact Us</h1>
           <p className="text-xl text-gray-200">We're here to help plan your perfect journey</p>
         </div>
       </section>
@@ -41,7 +26,7 @@ export function ContactPage() {
             <div className="lg:col-span-1 space-y-6">
               <div className="bg-white p-6 rounded-xl shadow-md">
                 <h2 className="text-2xl mb-6 text-[var(--deep-blue)]">Get in Touch</h2>
-                
+
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
                     <div className="bg-[var(--saffron)]/10 p-3 rounded-lg flex-shrink-0">
@@ -49,183 +34,151 @@ export function ContactPage() {
                     </div>
                     <div>
                       <h3 className="text-sm text-gray-600 mb-1">Phone</h3>
-                      <a href="tel:+919876543210" className="text-[var(--deep-blue)] hover:text-[var(--saffron)] transition-colors">
+                      <a href="tel:+919544968931" className="block text-[var(--deep-blue)] hover:text-[var(--saffron)] transition-colors font-medium">
                         +91 95449 68931
+                      </a>
+                      <a href="tel:+91994709114" className="block text-[var(--deep-blue)] hover:text-[var(--saffron)] transition-colors font-medium">
+                        +91 99470 9114
                       </a>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start gap-4">
                     <div className="bg-[var(--saffron)]/10 p-3 rounded-lg flex-shrink-0">
                       <Mail className="size-6 text-[var(--saffron)]" />
                     </div>
                     <div>
                       <h3 className="text-sm text-gray-600 mb-1">Email</h3>
-                      <a href="mailto:travel.scenicsafaris@gmail.com" className="text-[var(--deep-blue)] hover:text-[var(--saffron)] transition-colors">
+                      <a href="mailto:travel.scenicsafaris@gmail.com" className="text-[var(--deep-blue)] hover:text-[var(--saffron)] transition-colors break-all">
                         travel.scenicsafaris@gmail.com
                       </a>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start gap-4">
                     <div className="bg-[var(--saffron)]/10 p-3 rounded-lg flex-shrink-0">
                       <MapPin className="size-6 text-[var(--saffron)]" />
                     </div>
                     <div>
-                      <h3 className="text-sm text-gray-600 mb-1">Office Address</h3>
-                      <p className="text-[var(--deep-blue)]">
-                        123 Temple Road<br />
-                        New Delhi, India<br />
-                        110001
+                      <h3 className="text-sm text-gray-600 mb-2">Our Locations</h3>
+                      <p className="text-[var(--deep-blue)] text-sm mb-2">
+                        <span className="font-semibold">Hyderabad</span><br />
+                        Hyderabad, Telangana, India
+                      </p>
+                      <p className="text-[var(--deep-blue)] text-sm">
+                        <span className="font-semibold">Kochi</span><br />
+                        Kochi, Kerala, India
                       </p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Quick Actions */}
-              <div className="bg-white p-6 rounded-xl shadow-md">
-                <h3 className="text-xl mb-4 text-[var(--deep-blue)]">Quick Actions</h3>
-                <div className="space-y-3">
-                  <a 
-                    href="https://wa.me/919876543210"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3 bg-green-500 hover:bg-green-600 text-white px-4 py-3 rounded-lg transition-colors"
-                  >
-                    <MessageSquare className="size-5" />
-                    <span>WhatsApp Us</span>
-                  </a>
-                  <a 
-                    href="tel:+919876543210"
-                    className="flex items-center gap-3 bg-[var(--saffron)] hover:bg-[#e68a2e] text-white px-4 py-3 rounded-lg transition-colors"
-                  >
-                    <Phone className="size-5" />
-                    <span>Call Now</span>
-                  </a>
-                </div>
-              </div>
-
               {/* Office Hours */}
               <div className="bg-white p-6 rounded-xl shadow-md">
                 <h3 className="text-xl mb-4 text-[var(--deep-blue)]">Office Hours</h3>
-                <div className="space-y-2 text-gray-700">
+                <div className="space-y-2 text-gray-700 text-sm">
                   <div className="flex justify-between">
-                    <span>Monday - Friday:</span>
-                    <span>9:00 AM - 6:00 PM</span>
+                    <span>Monday – Friday</span>
+                    <span>9:00 AM – 6:00 PM</span>
                   </div>
                   <div className="flex justify-between">
-                    <span>Saturday:</span>
-                    <span>10:00 AM - 4:00 PM</span>
+                    <span>Saturday</span>
+                    <span>10:00 AM – 4:00 PM</span>
                   </div>
-                  <div className="flex justify-between">
-                    <span>Sunday:</span>
-                    <span>Closed</span>
+                  <div className="flex justify-between font-semibold text-green-600">
+                    <span>WhatsApp</span>
+                    <span>24 / 7 Available</span>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Contact Form */}
+            {/* WhatsApp Section */}
             <div className="lg:col-span-2">
               <div className="bg-white p-8 rounded-xl shadow-md">
-                <h2 className="text-3xl mb-2 text-[var(--deep-blue)]">Send us a Message</h2>
-                <p className="text-gray-600 mb-8">Fill out the form below and we'll get back to you shortly</p>
-                
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div>
-                    <label htmlFor="name" className="block mb-2 text-gray-700">
-                      Your Name *
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--saffron)] focus:border-transparent"
-                      placeholder="Enter your full name"
-                    />
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="bg-green-100 p-2 rounded-lg">
+                    <MessageSquare className="size-7 text-green-600" />
                   </div>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label htmlFor="email" className="block mb-2 text-gray-700">
-                        Email Address *
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--saffron)] focus:border-transparent"
-                        placeholder="your.email@example.com"
-                      />
-                    </div>
-                    
-                    <div>
-                      <label htmlFor="phone" className="block mb-2 text-gray-700">
-                        Phone Number *
-                      </label>
-                      <input
-                        type="tel"
-                        id="phone"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--saffron)] focus:border-transparent"
-                        placeholder="+91 95449 68931"
-                      />
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="message" className="block mb-2 text-gray-700">
-                      Your Message *
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                      rows={6}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--saffron)] focus:border-transparent resize-none"
-                      placeholder="Tell us about your travel plans, preferred destinations, number of travelers, dates, etc."
-                    ></textarea>
-                  </div>
-                  
-                  <button
-                    type="submit"
-                    className="bg-[var(--saffron)] hover:bg-[#e68a2e] text-white px-8 py-3 rounded-lg inline-flex items-center gap-2 transition-colors"
+                  <h2 className="text-3xl text-[var(--deep-blue)]">Chat with Us on WhatsApp</h2>
+                </div>
+                <p className="text-gray-600 mb-8">The fastest way to reach us! Click below to start a conversation — we typically respond within minutes.</p>
+
+                <a
+                  href="https://wa.me/919544968931?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20your%20tour%20packages."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-3 bg-green-500 hover:bg-green-600 text-white px-6 py-4 rounded-xl transition-colors text-lg font-semibold mb-8 w-full"
+                >
+                  <MessageSquare className="size-6" />
+                  Start WhatsApp Chat
+                </a>
+
+                <p className="text-sm text-gray-500 mb-4 font-medium uppercase tracking-wide">Quick Enquiries — Tap to Message:</p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+                  {quickMessages.map((msg) => (
+                    <a
+                      key={msg.label}
+                      href={`https://wa.me/919544968931?text=${encodeURIComponent(msg.text)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 border-2 border-green-200 hover:border-green-500 hover:bg-green-50 text-[var(--deep-blue)] px-4 py-3 rounded-lg transition-colors text-sm font-medium"
+                    >
+                      {msg.label}
+                    </a>
+                  ))}
+                </div>
+
+                <div className="border-t border-gray-100 pt-6 flex flex-col sm:flex-row gap-4">
+                  <a
+                    href="tel:+919544968931"
+                    className="flex items-center justify-center gap-2 bg-[var(--saffron)] hover:bg-[#e68a2e] text-white px-6 py-3 rounded-lg transition-colors font-medium flex-1"
                   >
-                    <Send className="size-5" />
-                    Send Message
-                  </button>
-                </form>
+                    <Phone className="size-5" />
+                    Call +91 95449 68931
+                  </a>
+                  <a
+                    href="tel:+91994709114"
+                    className="flex items-center justify-center gap-2 border-2 border-[var(--saffron)] hover:bg-[var(--saffron)]/10 text-[var(--saffron)] px-6 py-3 rounded-lg transition-colors font-medium flex-1"
+                  >
+                    <Phone className="size-5" />
+                    Call +91 99470 9114
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Map Section */}
+      {/* Locations Section */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl mb-8 text-center text-[var(--deep-blue)]">Find Us</h2>
-          <div className="bg-gray-200 rounded-xl overflow-hidden shadow-lg h-[400px] flex items-center justify-center">
-            <div className="text-center text-gray-600">
-              <MapPin className="size-16 mx-auto mb-4 text-[var(--saffron)]" />
-              <p className="text-lg">123 Temple Road, New Delhi, India 110001</p>
-              <p className="text-sm mt-2">Google Maps integration placeholder</p>
+          <h2 className="text-3xl mb-8 text-center text-[var(--deep-blue)]">Our Locations</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-[var(--beige)] rounded-xl p-6 flex items-start gap-4">
+              <div className="bg-[var(--saffron)]/10 p-3 rounded-lg flex-shrink-0">
+                <MapPin className="size-6 text-[var(--saffron)]" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-[var(--deep-blue)] text-lg mb-1">Hyderabad</h3>
+                <p className="text-gray-600">Hyderabad, Telangana, India</p>
+              </div>
+            </div>
+            <div className="bg-[var(--beige)] rounded-xl p-6 flex items-start gap-4">
+              <div className="bg-[var(--saffron)]/10 p-3 rounded-lg flex-shrink-0">
+                <MapPin className="size-6 text-[var(--saffron)]" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-[var(--deep-blue)] text-lg mb-1">Kochi</h3>
+                <p className="text-gray-600">Kochi, Kerala, India</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
+                  
     </div>
   );
 }

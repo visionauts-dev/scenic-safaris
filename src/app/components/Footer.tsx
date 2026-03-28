@@ -7,7 +7,7 @@ export function Footer() {
   return (
     <footer className="bg-[var(--deep-blue)] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
           <div>
             <div className="flex items-center gap-3">
@@ -80,15 +80,21 @@ export function Footer() {
             <ul className="space-y-3 text-sm text-gray-300">
               <li className="flex items-start gap-2">
                 <Phone className="size-4 mt-0.5 flex-shrink-0" />
-                <span>+91 95449 68931</span>
+                <div>
+                  <a href="tel:+919544968931" className="block hover:text-[var(--saffron)] transition-colors">+91 95449 68931</a>
+                  <a href="tel:+91994709114" className="block hover:text-[var(--saffron)] transition-colors">+91 99470 9114</a>
+                </div>
               </li>
               <li className="flex items-start gap-2">
                 <Mail className="size-4 mt-0.5 flex-shrink-0" />
-                <span>travel.scenicsafaris@gmail.com</span>
+                <a href="mailto:travel.scenicsafaris@gmail.com" className="hover:text-[var(--saffron)] transition-colors break-all">travel.scenicsafaris@gmail.com</a>
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="size-4 mt-0.5 flex-shrink-0" />
-                <span>123 Temple Road, New Delhi, India 110001</span>
+                <div>
+                  <span className="block">Hyderabad, Telangana</span>
+                  <span className="block">Kochi, Kerala</span>
+                </div>
               </li>
             </ul>
           </div>
