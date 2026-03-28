@@ -91,7 +91,7 @@ export function ServicesPage() {
         </div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-          <h1 className="text-5xl md:text-6xl mb-4">Our Services</h1>
+          <h1 className="text-3xl sm:text-5xl md:text-6xl mb-4">Our Services</h1>
           <p className="text-xl text-gray-200">Carefully curated travel experiences across India</p>
         </div>
       </section>
@@ -111,7 +111,7 @@ export function ServicesPage() {
                   <div className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-4" style={{ backgroundColor: service.color }}>
                     <service.icon className="size-8 text-white" />
                   </div>
-                  <h2 className="text-4xl mb-4 text-[var(--deep-blue)]">{service.title}</h2>
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl mb-4 text-[var(--deep-blue)]">{service.title}</h2>
                   <p className="text-lg text-gray-700 mb-6">{service.description}</p>
                   
                   {service.destinations && (
@@ -155,7 +155,7 @@ export function ServicesPage() {
                   )}
                 </div>
                 
-                <div className={`relative h-[500px] rounded-xl overflow-hidden shadow-2xl ${index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
+                <div className={`relative h-[260px] sm:h-[360px] lg:h-[500px] rounded-xl overflow-hidden shadow-2xl ${index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
                   <ImageWithFallback
                     src={service.image}
                     alt={service.title}

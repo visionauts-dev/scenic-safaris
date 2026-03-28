@@ -39,7 +39,7 @@ export function AboutPage() {
         </div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-          <h1 className="text-5xl md:text-6xl mb-4">About Scenic Safaris</h1>
+          <h1 className="text-3xl sm:text-5xl md:text-6xl mb-4">About Scenic Safaris</h1>
           <p className="text-xl text-gray-200">Creating journeys that inspire, enlighten, and transform</p>
         </div>
       </section>
@@ -70,7 +70,7 @@ export function AboutPage() {
               </div>
             </div>
             
-            <div className="relative h-[500px] rounded-xl overflow-hidden shadow-2xl">
+            <div className="relative h-[260px] sm:h-[380px] lg:h-[500px] rounded-xl overflow-hidden shadow-2xl">
               <ImageWithFallback
                 src="https://images.unsplash.com/photo-1765700325742-b52f566bf6dd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjBjdWx0dXJhbCUyMGhlcml0YWdlJTIwdHJhdmVsfGVufDF8fHx8MTc2OTkzNzAwMXww&ixlib=rb-4.1.0&q=80&w=1080"
                 alt="Indian heritage"
@@ -122,7 +122,7 @@ export function AboutPage() {
       <section className="py-20 bg-[var(--deep-blue)] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="relative h-[400px] rounded-xl overflow-hidden shadow-2xl">
+            <div className="relative h-[220px] sm:h-[320px] lg:h-[400px] rounded-xl overflow-hidden shadow-2xl">
               <ImageWithFallback
                 src="https://images.unsplash.com/photo-1763480005793-501a0cbe1ac9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoaW1hbGF5YW4lMjBtb3VudGFpbnMlMjBzZXJlbmUlMjBsYW5kc2NhcGV8ZW58MXx8fHwxNzY5OTM3MDAwfDA&ixlib=rb-4.1.0&q=80&w=1080"
                 alt="Serene landscape"

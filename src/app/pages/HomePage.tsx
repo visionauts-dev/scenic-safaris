@@ -1,207 +1,372 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle2, MapPin, Users, Headphones, Shield } from 'lucide-react';
-import { ImageWithFallback } from '@/app/components/figma/ImageWithFallback';
+import {
+  ArrowRight, CheckCircle2, MapPin, Users, Headphones, Shield,
+  Star, Phone, MessageSquare, ClipboardList, ChevronDown
+} from 'lucide-react';
 
 export function HomePage() {
-  const tourCategories = [
-    {
-      title: 'Pilgrimage Tours',
-      description: 'Sacred journeys to India\'s most revered spiritual destinations',
-      image: 'https://images.unsplash.com/photo-1745647591090-6dcac361600d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjB0ZW1wbGUlMjBzcGlyaXR1YWwlMjBwaWxncmltYWdlfGVufDF8fHx8MTc2OTkzNjk5OXww&ixlib=rb-4.1.0&q=80&w=1080',
-      color: 'var(--saffron)'
-    },
-    {
-      title: 'Cultural & Heritage',
-      description: 'Explore ancient traditions and historical landmarks',
-      image: 'https://images.unsplash.com/photo-1765700325742-b52f566bf6dd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjBjdWx0dXJhbCUyMGhlcml0YWdlJTIwdHJhdmVsfGVufDF8fHx8MTc2OTkzNzAwMXww&ixlib=rb-4.1.0&q=80&w=1080',
-      color: 'var(--deep-blue)'
-    },
-    {
-      title: 'Hill Station Retreats',
-      description: 'Peaceful escapes to scenic mountain destinations',
-      image: 'https://images.unsplash.com/photo-1650884905385-8f4454767ea3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWElMjBwbGFudGF0aW9uJTIwZ3JlZW4lMjBoaWxscyUyMGluZGlhfGVufDF8fHx8MTc2OTkzNzAwNHww&ixlib=rb-4.1.0&q=80&w=1080',
-      color: 'var(--forest-green)'
-    },
-    {
-      title: 'Custom Tours',
-      description: 'Personalized itineraries tailored to your preferences',
-      image: 'https://images.unsplash.com/photo-1763480005793-501a0cbe1ac9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoaW1hbGF5YW4lMjBtb3VudGFpbnMlMjBzZXJlbmUlMjBsYW5kc2NhcGV8ZW58MXx8fHwxNzY5OTM3MDAwfDA&ixlib=rb-4.1.0&q=80&w=1080',
-      color: '#8B6914'
-    }
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  const fleets = [
+    { name: 'Sedan', desc: 'Ideal for small families', seats: '4 Seater', icon: '🚗' },
+    { name: 'SUV', desc: 'Perfect for group travel', seats: '6–7 Seater', icon: '🚙' },
+    { name: 'Tempo Traveller', desc: 'Best for large groups', seats: '12–15 Seater', icon: '🚐' },
+    { name: 'Mini Bus', desc: 'Corporate and group tours', seats: '20–25 Seater', icon: '🚌' },
   ];
 
-  const features = [
+  const whyUs = [
+    { text: 'Reliable and professional service', icon: Shield },
+    { text: 'Experienced drivers', icon: Users },
+    { text: 'Affordable pricing with transparency', icon: CheckCircle2 },
+    { text: 'Wide destination coverage across India', icon: MapPin },
+    { text: 'Customized travel options', icon: ClipboardList },
+    { text: '24/7 support', icon: Headphones },
+  ];
+
+  const steps = [
+    { step: '01', title: 'Share your travel plan', icon: MessageSquare },
+    { step: '02', title: 'Get a customized quote', icon: ClipboardList },
+    { step: '03', title: 'Choose your package or vehicle', icon: CheckCircle2 },
+    { step: '04', title: 'Confirm booking', icon: CheckCircle2 },
+    { step: '05', title: 'Enjoy your journey', icon: MapPin },
+  ];
+
+  const testimonials = [
     {
-      icon: Shield,
-      title: 'Comfort & Safety',
-      description: 'Travel with confidence with our well-maintained vehicles and safety protocols'
+      name: 'Rahul Menon', location: 'Delhi', rating: 5,
+      text: 'We booked a 4-day trip to Munnar and Thekkady with Scenic Safari Tours and Travels, and I have to say the entire experience was flawless. The vehicle was clean, the driver was extremely polite and knowledgeable about the routes, and the itinerary was well planned without feeling rushed. It felt like traveling with someone who genuinely cares about your comfort. Highly recommended for family trips.',
     },
     {
-      icon: Users,
-      title: 'Trusted Guides',
-      description: 'Experienced local guides with deep cultural and historical knowledge'
+      name: 'Ayesha Khan', location: 'Hyderabad', rating: 5,
+      text: 'I recently booked a Shirdi and Nashik pilgrimage tour for my parents, and the service exceeded my expectations. Everything was handled so professionally — from pickup to accommodation guidance. My parents felt safe and comfortable throughout the journey, which was my biggest concern. Thank you for making their spiritual trip so smooth and memorable.',
     },
     {
-      icon: Headphones,
-      title: '24/7 Support',
-      description: 'Round-the-clock assistance to ensure a smooth travel experience'
+      name: 'Vishnu Prasad', location: 'Mangalore', rating: 5,
+      text: "I use their cab service regularly for airport transfers, and they have never disappointed. Always on time, well-maintained vehicles, and very courteous drivers. It's rare to find such consistent service these days. I would definitely recommend them to anyone looking for a reliable taxi service in Mangalore.",
     },
     {
-      icon: MapPin,
-      title: 'Authentic Experiences',
-      description: 'Carefully curated experiences that go beyond typical tourism'
-    }
+      name: 'Sneha Reddy', location: 'Bangalore', rating: 5,
+      text: 'We planned a Chikmagalur weekend getaway through Scenic Safari Tours and Travels, and it turned out to be one of our best trips. The customization they offered really made a difference — we could travel at our own pace and visit places we actually wanted to see. Everything was smooth, and the pricing was transparent with no hidden charges.',
+    },
+    {
+      name: 'Faisal Ahmed', location: 'Kasaragod', rating: 5,
+      text: "Our group trip to Gokarna and Murudeshwar was perfectly organized. The tempo traveller was very comfortable, and the driver was friendly and cooperative throughout the journey. What stood out the most was their responsiveness — they were always just a call away. Great service and a team you can trust.",
+    },
+  ];
+
+  const faqs = [
+    {
+      q: 'Do you provide services in Kerala and Hyderabad?',
+      a: 'Yes, we operate across Kerala and also cater to customers from Hyderabad and other regions.',
+    },
+    {
+      q: 'Can I book pilgrimage tours?',
+      a: 'Yes, we specialize in pilgrimage tours across India.',
+    },
+    {
+      q: 'Do you offer customized packages?',
+      a: 'Yes, all packages can be tailored to your needs.',
+    },
+    {
+      q: 'What vehicles are available?',
+      a: 'We offer Sedans, SUVs, Tempo Travellers, and Mini Buses to suit every group size and requirement.',
+    },
   ];
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative h-[600px] flex items-center justify-center overflow-hidden">
+
+      {/* ── Hero ── */}
+      <section className="relative min-h-[620px] md:h-[680px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <ImageWithFallback
+          <img
             src="https://images.unsplash.com/photo-1699630923504-9a24dbaab37c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx2YXJhbmFzaSUyMHRlbXBsZSUyMGdhbmdhJTIwcml2ZXIlMjBpbmRpYXxlbnwxfHx8fDE3Njk5MzY5OTl8MA&ixlib=rb-4.1.0&q=80&w=1080"
-            alt="Sacred India landscape"
+            alt="India travel landscape"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/30"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30" />
         </div>
-        
+
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-          <h1 className="text-5xl md:text-6xl mb-6 leading-tight">
-            Soulful Journeys Across<br />Sacred & Scenic India
+          <p className="text-[var(--saffron)] uppercase tracking-widest text-sm font-medium mb-3">
+            Scenic Safari Tours &amp; Travels
+          </p>
+          <h1 className="text-3xl sm:text-4xl md:text-6xl mb-5 leading-tight font-bold">
+            Explore India with<br />Comfort, Faith &amp; Adventure
           </h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-gray-200">
-            Experience the spiritual richness and natural beauty of India with our thoughtfully designed tours
+          <p className="text-base md:text-lg mb-3 max-w-3xl mx-auto text-gray-200">
+            Your trusted partner for reliable taxi services, customized tour packages, and unforgettable travel
+            experiences across Kerala, Karnataka, Hyderabad, and top destinations across India.
           </p>
-          <div className="flex gap-4 justify-center flex-wrap">
-            <Link 
-              to="/services"
-              className="bg-[var(--saffron)] hover:bg-[#e68a2e] text-white px-8 py-3 rounded-lg inline-flex items-center gap-2 transition-colors"
-            >
-              Explore Our Tours
-              <ArrowRight className="size-5" />
-            </Link>
-            <Link 
-              to="/contact"
-              className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white px-8 py-3 rounded-lg border border-white/30 transition-colors"
-            >
-              Contact Us
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section className="py-16 bg-[var(--beige)]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-4xl mb-6 text-[var(--deep-blue)]">Welcome to Scenic Safaris</h2>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              We specialize in creating meaningful travel experiences that connect you with India's rich spiritual heritage, 
-              diverse cultures, and breathtaking natural landscapes. Whether you seek enlightenment at sacred sites, 
-              wish to explore ancient traditions, or simply need a peaceful retreat in the mountains, we craft journeys 
-              that touch the soul.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Tour Categories */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl mb-4 text-[var(--deep-blue)]">Our Tour Categories</h2>
-            <p className="text-lg text-gray-600">Choose from our carefully curated travel experiences</p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {tourCategories.map((category, index) => (
-              <div 
-                key={index}
-                className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
-              >
-                <div className="aspect-[3/4] relative">
-                  <ImageWithFallback
-                    src={category.image}
-                    alt={category.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
-                </div>
-                
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                  <div 
-                    className="w-12 h-1 mb-3 rounded" 
-                    style={{ backgroundColor: category.color }}
-                  ></div>
-                  <h3 className="text-2xl mb-2">{category.title}</h3>
-                  <p className="text-sm text-gray-200">{category.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-          
-          <div className="text-center mt-10">
-            <Link 
-              to="/services"
-              className="inline-flex items-center gap-2 text-[var(--saffron)] hover:text-[#e68a2e] transition-colors"
-            >
-              View All Services
-              <ArrowRight className="size-5" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us */}
-      <section className="py-20 bg-[var(--beige)]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl mb-4 text-[var(--deep-blue)]">Why Choose Scenic Safaris</h2>
-            <p className="text-lg text-gray-600">We go beyond ordinary travel to create extraordinary experiences</p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature, index) => (
-              <div 
-                key={index}
-                className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow text-center"
-              >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-[var(--saffron)]/10 rounded-full mb-4">
-                  <feature.icon className="size-8 text-[var(--saffron)]" />
-                </div>
-                <h3 className="text-xl mb-2 text-[var(--deep-blue)]">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-[var(--deep-blue)] text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl mb-6">Ready to Begin Your Journey?</h2>
-          <p className="text-xl mb-8 text-gray-200">
-            Let us help you plan an unforgettable experience across India's most beautiful and spiritual destinations
+          <p className="text-sm md:text-base mb-9 max-w-2xl mx-auto text-gray-300">
+            From peaceful pilgrimage journeys to scenic hill station retreats and relaxing beach holidays —
+            we make every journey smooth, safe, and memorable.
           </p>
-          <div className="flex gap-4 justify-center flex-wrap">
-            <Link 
+          <div className="flex flex-col sm:flex-row gap-3 justify-center items-center flex-wrap">
+            <Link
               to="/contact"
-              className="bg-[var(--saffron)] hover:bg-[#e68a2e] text-white px-8 py-3 rounded-lg inline-flex items-center gap-2 transition-colors"
+              className="w-full sm:w-auto bg-[var(--saffron)] hover:bg-[#e68a2e] text-white px-7 py-3 rounded-lg inline-flex items-center justify-center gap-2 transition-colors font-medium"
             >
-              Plan Your Journey
-              <ArrowRight className="size-5" />
+              Plan Your Trip <ArrowRight className="size-4" />
             </Link>
-            <a 
-              href="tel:+919876543210"
-              className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white px-8 py-3 rounded-lg border border-white/30 transition-colors"
+            <Link
+              to="/contact"
+              className="w-full sm:w-auto bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white px-7 py-3 rounded-lg border border-white/30 transition-colors font-medium text-center"
             >
-              Call Us Now
+              Get a Free Quote
+            </Link>
+            <a
+              href="tel:+919544968931"
+              className="w-full sm:w-auto bg-[var(--deep-blue)]/80 hover:bg-[var(--deep-blue)] text-white px-7 py-3 rounded-lg border border-white/20 transition-colors font-medium inline-flex items-center justify-center gap-2"
+            >
+              <Phone className="size-4" /> Book Your Ride
             </a>
           </div>
         </div>
       </section>
+
+      {/* ── About ── */}
+      <section className="py-20 bg-[var(--beige)]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+            <div>
+              <p className="text-[var(--saffron)] uppercase tracking-widest text-sm font-medium mb-2">About Us</p>
+              <h2 className="text-3xl md:text-4xl mb-5 text-[var(--deep-blue)] font-bold">
+                A Travel Partner You Can Trust
+              </h2>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                Scenic Safari Tours and Travels is built on a simple idea — travel should be easy, comfortable, and
+                enriching. With strong operational presence in Kerala and service reach extending to Hyderabad and
+                major travel circuits across India, we provide end-to-end travel solutions for individuals, families,
+                and corporate clients.
+              </p>
+              <p className="text-gray-600 mb-3 font-medium">We specialize in:</p>
+              <ul className="space-y-2 mb-6">
+                {[
+                  'Customized tour packages',
+                  'Pilgrimage tours across India',
+                  'Hill station and nature getaways',
+                  'Corporate and group travel',
+                  'Reliable taxi and cab services',
+                ].map((item) => (
+                  <li key={item} className="flex items-center gap-2 text-gray-700">
+                    <CheckCircle2 className="size-4 text-[var(--saffron)] flex-shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Our focus is on delivering a seamless travel experience — from planning to execution — with
+                professional drivers, well-maintained vehicles, and personalized service.
+              </p>
+            </div>
+
+            <div className="relative pb-8 lg:pb-0">
+              <img
+                src="https://images.unsplash.com/photo-1650884905385-8f4454767ea3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWElMjBwbGFudGF0aW9uJTIwZ3JlZW4lMjBoaWxscyUyMGluZGlhfGVufDF8fHx8MTc2OTkzNzAwNHww&ixlib=rb-4.1.0&q=80&w=1080"
+                alt="India scenic landscape"
+                className="rounded-2xl shadow-xl w-full object-cover h-64 sm:h-80 lg:h-[420px]"
+              />
+              <div className="absolute bottom-2 left-4 lg:-bottom-5 lg:-left-5 bg-white rounded-xl shadow-lg p-4 flex items-center gap-3">
+                <div className="bg-[var(--saffron)]/10 rounded-full p-2">
+                  <Shield className="size-5 text-[var(--saffron)]" />
+                </div>
+                <div>
+                  <p className="font-semibold text-[var(--deep-blue)] text-sm">Trusted Service</p>
+                  <p className="text-xs text-gray-500">500+ Happy Clients</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Fleet ── */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <p className="text-[var(--saffron)] uppercase tracking-widest text-sm font-medium mb-2">Our Fleet</p>
+            <h2 className="text-3xl md:text-4xl mb-3 text-[var(--deep-blue)] font-bold">
+              Comfortable Travel for Every Group Size
+            </h2>
+            <p className="text-gray-600 max-w-xl mx-auto">
+              Choose from a wide range of vehicles tailored to your group size and travel needs.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {fleets.map((vehicle) => (
+              <div
+                key={vehicle.name}
+                className="bg-[var(--beige)] rounded-2xl p-6 text-center hover:shadow-lg transition-shadow border border-[var(--warm-beige)]/50 group"
+              >
+                <div className="text-5xl mb-4">{vehicle.icon}</div>
+                <h3 className="text-xl font-bold text-[var(--deep-blue)] mb-1">{vehicle.name}</h3>
+                <p className="text-[var(--saffron)] text-sm font-semibold mb-2">{vehicle.seats}</p>
+                <p className="text-gray-600 text-sm">{vehicle.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <p className="text-center text-gray-500 text-sm mt-6">
+            All vehicles are clean, well-maintained, and driven by professionals.
+          </p>
+        </div>
+      </section>
+
+      {/* ── Why Choose Us ── */}
+      <section className="py-20 bg-[var(--deep-blue)] text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <p className="text-[var(--saffron)] uppercase tracking-widest text-sm font-medium mb-2">
+              ⭐ Why Choose Us
+            </p>
+            <h2 className="text-3xl md:text-4xl mb-3 font-bold">Experience Travel the Right Way</h2>
+            <p className="text-gray-300 max-w-xl mx-auto">
+              We focus on delivering a travel experience that is smooth, safe, and enjoyable.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {whyUs.map((item) => (
+              <div
+                key={item.text}
+                className="flex items-start gap-4 bg-white/5 hover:bg-white/10 transition-colors rounded-xl p-5 border border-white/10"
+              >
+                <div className="bg-[var(--saffron)]/20 rounded-full p-2 flex-shrink-0">
+                  <item.icon className="size-5 text-[var(--saffron)]" />
+                </div>
+                <p className="text-gray-200 pt-1">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── How It Works ── */}
+      <section className="py-20 bg-[var(--beige)]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <p className="text-[var(--saffron)] uppercase tracking-widest text-sm font-medium mb-2">How It Works</p>
+            <h2 className="text-3xl md:text-4xl text-[var(--deep-blue)] font-bold">Simple Booking Process</h2>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-8 relative">
+            {steps.map((s, i) => (
+              <div key={s.step} className="flex flex-col items-center text-center relative">
+                <div className="w-14 h-14 rounded-full bg-[var(--saffron)] text-white text-lg font-bold flex items-center justify-center shadow-md mb-4 z-10">
+                  {s.step}
+                </div>
+                {i < steps.length - 1 && (
+                  <div className="hidden lg:block absolute top-7 left-[55%] w-[90%] h-px bg-[var(--saffron)]/30" />
+                )}
+                <p className="text-[var(--deep-blue)] font-semibold text-sm leading-snug">{s.title}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Link
+              to="/contact"
+              className="bg-[var(--saffron)] hover:bg-[#e68a2e] text-white px-8 py-3 rounded-lg inline-flex items-center gap-2 transition-colors font-medium"
+            >
+              Start Planning Now <ArrowRight className="size-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Testimonials ── */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <p className="text-[var(--saffron)] uppercase tracking-widest text-sm font-medium mb-2">Testimonials</p>
+            <h2 className="text-3xl md:text-4xl text-[var(--deep-blue)] font-bold">What Our Travellers Say</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {testimonials.map((t) => (
+              <div
+                key={t.name}
+                className="bg-[var(--beige)] rounded-2xl p-6 border border-[var(--warm-beige)]/50 hover:shadow-lg transition-shadow flex flex-col"
+              >
+                <div className="flex gap-1 mb-3">
+                  {Array.from({ length: t.rating }).map((_, i) => (
+                    <Star key={i} className="size-4 fill-[var(--saffron)] text-[var(--saffron)]" />
+                  ))}
+                </div>
+                <p className="text-gray-700 text-sm leading-relaxed flex-1 mb-4 italic">"{t.text}"</p>
+                <div className="flex items-center gap-3 pt-3 border-t border-[var(--warm-beige)]">
+                  <div className="w-9 h-9 rounded-full bg-[var(--deep-blue)] text-white flex items-center justify-center text-sm font-bold flex-shrink-0">
+                    {t.name[0]}
+                  </div>
+                  <div>
+                    <p className="font-semibold text-[var(--deep-blue)] text-sm">{t.name}</p>
+                    <p className="text-xs text-gray-500">{t.location}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── FAQ ── */}
+      <section className="py-20 bg-[var(--beige)]">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <p className="text-[var(--saffron)] uppercase tracking-widest text-sm font-medium mb-2">FAQ</p>
+            <h2 className="text-3xl md:text-4xl text-[var(--deep-blue)] font-bold">Frequently Asked Questions</h2>
+          </div>
+
+          <div className="space-y-3">
+            {faqs.map((faq, i) => (
+              <div key={i} className="bg-white rounded-xl border border-[var(--warm-beige)]/50 overflow-hidden">
+                <button
+                  className="w-full text-left px-6 py-4 flex items-center justify-between gap-4 hover:bg-gray-50 transition-colors"
+                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                >
+                  <span className="font-semibold text-[var(--deep-blue)]">{faq.q}</span>
+                  <ChevronDown
+                    className={`size-5 text-[var(--saffron)] flex-shrink-0 transition-transform duration-200 ${openFaq === i ? 'rotate-180' : ''}`}
+                  />
+                </button>
+                {openFaq === i && (
+                  <div className="px-6 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-3">
+                    {faq.a}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Final CTA ── */}
+      <section className="py-20 bg-[var(--deep-blue)] text-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-4xl mb-5 font-bold">Ready to Plan Your Journey?</h2>
+          <p className="text-lg mb-8 text-gray-200 max-w-2xl mx-auto">
+            Let us help you create an unforgettable experience across India's most beautiful and spiritual destinations.
+          </p>
+          <div className="flex gap-4 justify-center flex-wrap">
+            <Link
+              to="/contact"
+              className="bg-[var(--saffron)] hover:bg-[#e68a2e] text-white px-8 py-3 rounded-lg inline-flex items-center gap-2 transition-colors font-medium"
+            >
+              Plan Your Trip <ArrowRight className="size-4" />
+            </Link>
+            <a
+              href="tel:+919544968931"
+              className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white px-8 py-3 rounded-lg border border-white/30 transition-colors font-medium inline-flex items-center gap-2"
+            >
+              <Phone className="size-4" /> Call Us Now
+            </a>
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 }
