@@ -57,8 +57,8 @@ export function HomePage() {
 
   const faqs = [
     {
-      q: 'Do you provide services in Kerala and Hyderabad?',
-      a: 'Yes, we operate across Kerala and also cater to customers from Hyderabad and other regions.',
+      q: 'Do you provide services across Kerala?',
+      a: 'Yes, we operate across Kerala and top destinations across India.',
     },
     {
       q: 'Can I book pilgrimage tours?',
@@ -97,7 +97,7 @@ export function HomePage() {
           </h1>
           <p className="text-base md:text-lg mb-3 max-w-3xl mx-auto text-gray-200">
             Your trusted partner for reliable taxi services, customized tour packages, and unforgettable travel
-            experiences across Kerala, Karnataka, Hyderabad, and top destinations across India.
+            experiences across Kerala, Karnataka, and top destinations across India.
           </p>
           <p className="text-sm md:text-base mb-9 max-w-2xl mx-auto text-gray-300">
             From peaceful pilgrimage journeys to scenic hill station retreats and relaxing beach holidays —
@@ -133,22 +133,28 @@ export function HomePage() {
             <div>
               <p className="text-[var(--saffron)] uppercase tracking-widest text-sm font-medium mb-2">About Us</p>
               <h2 className="text-3xl md:text-4xl mb-5 text-[var(--deep-blue)] font-bold">
-                A Travel Partner You Can Trust
+                Discover God's Own Country with Scenic Safaris
               </h2>
-              <p className="text-gray-700 leading-relaxed mb-4">
-                Scenic Safari Tours and Travels is built on a simple idea — travel should be easy, comfortable, and
-                enriching. With strong operational presence in Kerala and service reach extending to Hyderabad and
-                major travel circuits across India, we provide end-to-end travel solutions for individuals, families,
-                and corporate clients.
+              <p className="text-gray-700 leading-relaxed mb-3">
+                Welcome to Scenic Safaris Tours and Travels — your trusted partner for affordable and unforgettable
+                journeys across Kerala. From misty hill stations and tranquil backwaters to rich wildlife and vibrant
+                cultural experiences, we bring you closer to the very best this stunning destination has to offer.
               </p>
-              <p className="text-gray-600 mb-3 font-medium">We specialize in:</p>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                We believe great travel experiences shouldn't come at a high cost. Our tour packages are
+                thoughtfully designed to provide maximum value, comfort, and convenience — perfect for individuals,
+                couples, families, and groups.
+              </p>
+              <p className="text-gray-600 mb-3 font-medium">Explore Kerala's finest:</p>
               <ul className="space-y-2 mb-6">
                 {[
-                  'Customized tour packages',
-                  'Pilgrimage tours across India',
-                  'Hill station and nature getaways',
-                  'Corporate and group travel',
-                  'Reliable taxi and cab services',
+                  'Lush tea gardens of Munnar',
+                  'Serene houseboat cruises in Alleppey',
+                  'Wildlife adventures in Periyar',
+                  'Scenic hill stations & beach retreats',
+                  "Kerala's rich traditions, cuisine & heritage",
+                  'Sacred pilgrimage tours across India',
+                  'Customized tour packages for every traveller',
                 ].map((item) => (
                   <li key={item} className="flex items-center gap-2 text-gray-700">
                     <CheckCircle2 className="size-4 text-[var(--saffron)] flex-shrink-0" />
@@ -157,8 +163,8 @@ export function HomePage() {
                 ))}
               </ul>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Our focus is on delivering a seamless travel experience — from planning to execution — with
-                professional drivers, well-maintained vehicles, and personalized service.
+                With strong local expertise and a passion for travel, we handle every detail — from planning your
+                itinerary to coordinating transport — so you can relax and enjoy your journey.
               </p>
             </div>
 

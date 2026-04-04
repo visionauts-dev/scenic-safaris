@@ -20,15 +20,17 @@ export function Header() {
   return (
     <header className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-24 sm:h-20">
           {/* Logo */}
-          <div className="flex items-center gap-3 flex-shrink-0">
-            <img src={logo} alt="ScenicSafaris Logo" className="h-12" />
-            <div className="flex flex-col justify-between h-12">
-              <div className="text-xl font-semibold text-[var(--deep-blue)]">
+          <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1 md:flex-none">
+            <img src={logo} alt="ScenicSafaris Logo" className="h-10 sm:h-12" />
+            <div className="flex flex-col justify-center min-w-0">
+              <div className="text-base sm:text-xl font-semibold text-[var(--deep-blue)] leading-tight truncate">
                 Scenic Safaris
               </div>
-              <div className="text-xs text-gray-600">Every journey is more than just travel</div>
+              <div className="text-[10px] sm:text-xs text-gray-600 leading-tight whitespace-normal max-w-[170px] sm:max-w-[220px] md:max-w-[360px] lg:max-w-none">
+                Travelling - It leaves you speechless, then turns you into a storyteller
+              </div>
             </div>
           </div>
 
@@ -60,7 +62,7 @@ export function Header() {
 
           {/* Mobile hamburger button */}
           <button
-            className="md:hidden p-2 text-gray-700 rounded-md hover:bg-gray-100 focus:outline-none"
+            className="md:hidden p-2 ml-2 flex-shrink-0 text-gray-700 rounded-md hover:bg-gray-100 focus:outline-none"
             onClick={() => setMenuOpen((prev) => !prev)}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
           >

@@ -60,11 +60,7 @@ export function ContactPage() {
                       <MapPin className="size-6 text-[var(--saffron)]" />
                     </div>
                     <div>
-                      <h3 className="text-sm text-gray-600 mb-2">Our Locations</h3>
-                      <p className="text-[var(--deep-blue)] text-sm mb-2">
-                        <span className="font-semibold">Hyderabad</span><br />
-                        Hyderabad, Telangana, India
-                      </p>
+                      <h3 className="text-sm text-gray-600 mb-2">Our Location</h3>
                       <p className="text-[var(--deep-blue)] text-sm">
                         <span className="font-semibold">Kochi</span><br />
                         Kochi, Kerala, India
@@ -155,17 +151,8 @@ export function ContactPage() {
       {/* Locations Section */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl mb-8 text-center text-[var(--deep-blue)]">Our Locations</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-[var(--beige)] rounded-xl p-6 flex items-start gap-4">
-              <div className="bg-[var(--saffron)]/10 p-3 rounded-lg flex-shrink-0">
-                <MapPin className="size-6 text-[var(--saffron)]" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-[var(--deep-blue)] text-lg mb-1">Hyderabad</h3>
-                <p className="text-gray-600">Hyderabad, Telangana, India</p>
-              </div>
-            </div>
+          <h2 className="text-3xl mb-8 text-center text-[var(--deep-blue)]">Our Location</h2>
+          <div className="grid grid-cols-1 gap-6 max-w-sm mx-auto">
             <div className="bg-[var(--beige)] rounded-xl p-6 flex items-start gap-4">
               <div className="bg-[var(--saffron)]/10 p-3 rounded-lg flex-shrink-0">
                 <MapPin className="size-6 text-[var(--saffron)]" />
