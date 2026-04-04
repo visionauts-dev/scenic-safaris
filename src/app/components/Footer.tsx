@@ -20,7 +20,7 @@ export function Footer() {
               </div>
             </div>
             <p className="text-sm text-gray-300 italic">
-              "Every journey is more than just travel"
+              "Travelling – It leaves you speechless, then turns you into a storyteller"
             </p>
           </div>
 
@@ -82,7 +82,7 @@ export function Footer() {
                 <Phone className="size-4 mt-0.5 flex-shrink-0" />
                 <div>
                   <a href="tel:+919544968931" className="block hover:text-[var(--saffron)] transition-colors">+91 95449 68931</a>
-                  <a href="tel:+91994709114" className="block hover:text-[var(--saffron)] transition-colors">+91 99470 9114</a>
+                  <a href="tel:+919947091445" className="block hover:text-[var(--saffron)] transition-colors">+91 99470 91445</a>
                 </div>
               </li>
               <li className="flex items-start gap-2">
@@ -92,7 +92,6 @@ export function Footer() {
               <li className="flex items-start gap-2">
                 <MapPin className="size-4 mt-0.5 flex-shrink-0" />
                 <div>
-                  <span className="block">Hyderabad, Telangana</span>
                   <span className="block">Kochi, Kerala</span>
                 </div>
               </li>

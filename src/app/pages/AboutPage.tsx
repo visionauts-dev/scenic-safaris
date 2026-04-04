@@ -160,7 +160,7 @@ export function AboutPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl mb-4 text-[var(--deep-blue)]">Begin Your Journey With Us</h2>
           <p className="text-lg text-gray-700 mb-6">
-            Every journey is more than just travel – it's an opportunity for growth, connection, and discovery
+            Travelling – It leaves you speechless, then turns you into a storyteller
           </p>
           <a 
             href="/contact"
