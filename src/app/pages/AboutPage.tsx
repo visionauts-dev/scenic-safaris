@@ -1,5 +1,4 @@
 import { Heart, Users, Globe, Award } from 'lucide-react';
-import { ImageWithFallback } from '@/app/components/figma/ImageWithFallback';
 
 export function AboutPage() {
   const values = [
@@ -30,7 +29,7 @@ export function AboutPage() {
       {/* Hero Section */}
       <section className="relative h-[400px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <ImageWithFallback
+          <img
             src="https://images.unsplash.com/photo-1649996255271-9a20a441d25d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzYWNyZWQlMjBpbmRpYSUyMHNwaXJpdHVhbCUyMGpvdXJuZXl8ZW58MXx8fHwxNzY5OTM3MDAxfDA&ixlib=rb-4.1.0&q=80&w=1080"
             alt="Sacred India"
             className="w-full h-full object-cover"
@@ -71,7 +70,7 @@ export function AboutPage() {
             </div>
             
             <div className="relative h-[260px] sm:h-[380px] lg:h-[500px] rounded-xl overflow-hidden shadow-2xl">
-              <ImageWithFallback
+              <img
                 src="https://images.unsplash.com/photo-1765700325742-b52f566bf6dd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjBjdWx0dXJhbCUyMGhlcml0YWdlJTIwdHJhdmVsfGVufDF8fHx8MTc2OTkzNzAwMXww&ixlib=rb-4.1.0&q=80&w=1080"
                 alt="Indian heritage"
                 className="w-full h-full object-cover"
@@ -123,7 +122,7 @@ export function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative h-[220px] sm:h-[320px] lg:h-[400px] rounded-xl overflow-hidden shadow-2xl">
-              <ImageWithFallback
+              <img
                 src="https://images.unsplash.com/photo-1763480005793-501a0cbe1ac9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoaW1hbGF5YW4lMjBtb3VudGFpbnMlMjBzZXJlbmUlMjBsYW5kc2NhcGV8ZW58MXx8fHwxNzY5OTM3MDAwfDA&ixlib=rb-4.1.0&q=80&w=1080"
                 alt="Serene landscape"
                 className="w-full h-full object-cover"
