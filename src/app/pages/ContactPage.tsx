@@ -37,8 +37,8 @@ export function ContactPage() {
                       <a href="tel:+919544968931" className="block text-[var(--deep-blue)] hover:text-[var(--saffron)] transition-colors font-medium">
                         +91 95449 68931
                       </a>
-                      <a href="tel:+91994709114" className="block text-[var(--deep-blue)] hover:text-[var(--saffron)] transition-colors font-medium">
-                        +91 99470 9114
+                      <a href="tel:+919947091445" className="block text-[var(--deep-blue)] hover:text-[var(--saffron)] transition-colors font-medium">
+                        +91 9947 091445
                       </a>
                     </div>
                   </div>
@@ -139,11 +139,11 @@ export function ContactPage() {
                     Call +91 95449 68931
                   </a>
                   <a
-                    href="tel:+91994709114"
+                    href="tel:+919947091445"
                     className="flex items-center justify-center gap-2 border-2 border-[var(--saffron)] hover:bg-[var(--saffron)]/10 text-[var(--saffron)] px-6 py-3 rounded-lg transition-colors font-medium flex-1"
                   >
                     <Phone className="size-5" />
-                    Call +91 99470 9114
+                    Call +91 9947 091445
                   </a>
                 </div>
               </div>
