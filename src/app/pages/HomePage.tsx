@@ -81,8 +81,8 @@ export function HomePage() {
       <section className="relative min-h-[620px] md:h-[680px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1699630923504-9a24dbaab37c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx2YXJhbmFzaSUyMHRlbXBsZSUyMGdhbmdhJTIwcml2ZXIlMjBpbmRpYXxlbnwxfHx8fDE3Njk5MzY5OTl8MA&ixlib=rb-4.1.0&q=80&w=1080"
-            alt="India travel landscape"
+            src="/house.jpeg"
+            alt="Alleppey houseboat scenic view"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30" />
