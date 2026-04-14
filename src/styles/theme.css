@@ -40,12 +40,12 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
   
-  /* ScenicSafaris Custom Colors */
-  --saffron: #FF9933;
-  --deep-blue: #1e3a5f;
-  --forest-green: #2d5016;
-  --beige: #f5f0e8;
-  --warm-beige: #d4c4a8;
+  /* ScenicSafaris Brand Palette (professional slate + teal neutrals) */
+  --saffron: #2f6f6d;
+  --deep-blue: #27323f;
+  --forest-green: #3f645c;
+  --beige: #f4f7f8;
+  --warm-beige: #d5dfe3;
 }
 
 .dark {

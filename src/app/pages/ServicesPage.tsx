@@ -82,8 +82,8 @@ export function ServicesPage() {
             alt="Kerala service preview"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-[#0e1f3a]/90 via-[#0e1f3a]/78 to-[#d4872f]/38" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(241,157,65,0.28),transparent_60%)]" />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#27323f]/90 via-[#27323f]/78 to-[#2f6f6d]/38" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(47,111,109,0.24),transparent_60%)]" />
         </div>
 
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-white text-center">
@@ -129,7 +129,7 @@ export function ServicesPage() {
 
                   <Link
                     to={service.ctaHref}
-                    className="inline-flex items-center justify-center gap-2 bg-[var(--saffron)] hover:bg-[#e68a2e] text-white px-4 py-2.5 rounded-lg font-semibold text-sm transition-colors"
+                    className="inline-flex items-center justify-center gap-2 bg-[var(--saffron)] hover:bg-[#255a58] text-white px-4 py-2.5 rounded-lg font-semibold text-sm transition-colors"
                   >
                     {service.ctaLabel} <ArrowRight className="size-4" />
                   </Link>
@@ -212,7 +212,7 @@ export function ServicesPage() {
               />
               <button
                 type="submit"
-                className="bg-[var(--saffron)] hover:bg-[#e68a2e] text-white px-6 py-3 rounded-lg font-semibold transition-colors"
+                className="bg-[var(--saffron)] hover:bg-[#255a58] text-white px-6 py-3 rounded-lg font-semibold transition-colors"
               >
                 Submit Enquiry
               </button>

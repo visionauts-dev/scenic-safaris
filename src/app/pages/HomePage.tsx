@@ -238,7 +238,7 @@ export function HomePage() {
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link
               to="/services"
-              className="w-full sm:w-auto bg-[var(--saffron)] hover:bg-[#e68a2e] text-white px-7 py-3.5 rounded-xl inline-flex items-center justify-center gap-2 font-semibold shadow-lg transition-colors"
+              className="w-full sm:w-auto bg-[var(--saffron)] hover:bg-[#255a58] text-white px-7 py-3.5 rounded-xl inline-flex items-center justify-center gap-2 font-semibold shadow-lg transition-colors"
             >
               Explore Packages <ArrowRight className="size-4" />
             </Link>
@@ -300,7 +300,7 @@ export function HomePage() {
               />
               <button
                 type="submit"
-                className="bg-[var(--saffron)] hover:bg-[#e68a2e] text-white px-6 py-3 rounded-xl font-semibold text-sm transition-colors shadow-sm"
+                className="bg-[var(--saffron)] hover:bg-[#255a58] text-white px-6 py-3 rounded-xl font-semibold text-sm transition-colors shadow-sm"
               >
                 Get Free Quote
               </button>
@@ -354,7 +354,7 @@ export function HomePage() {
           <div className="text-center mt-8">
             <Link
               to="/services"
-              className="inline-flex items-center gap-2 text-[var(--saffron)] hover:text-[#e68a2e] font-semibold text-sm"
+              className="inline-flex items-center gap-2 text-[var(--saffron)] hover:text-[#255a58] font-semibold text-sm"
             >
               Explore all services <ArrowRight className="size-4" />
             </Link>
@@ -501,7 +501,7 @@ export function HomePage() {
           <div className="text-center mt-10">
             <Link
               to="/contact"
-              className="bg-[var(--saffron)] hover:bg-[#e68a2e] text-white px-8 py-3.5 rounded-xl inline-flex items-center gap-2 font-semibold shadow-md transition-colors"
+              className="bg-[var(--saffron)] hover:bg-[#255a58] text-white px-8 py-3.5 rounded-xl inline-flex items-center gap-2 font-semibold shadow-md transition-colors"
             >
               Start Planning Now <ArrowRight className="size-4" />
             </Link>
@@ -594,7 +594,7 @@ export function HomePage() {
           <div className="flex gap-4 justify-center flex-wrap">
             <Link
               to="/contact"
-              className="bg-[var(--saffron)] hover:bg-[#e68a2e] text-white px-8 py-3.5 rounded-xl inline-flex items-center gap-2 font-semibold shadow-lg transition-colors"
+              className="bg-[var(--saffron)] hover:bg-[#255a58] text-white px-8 py-3.5 rounded-xl inline-flex items-center gap-2 font-semibold shadow-lg transition-colors"
             >
               Get Custom Plan <ArrowRight className="size-4" />
             </Link>

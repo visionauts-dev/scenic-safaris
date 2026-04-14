@@ -69,7 +69,7 @@ export function AboutPage() {
             alt="Kerala travel view"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0e1f3a]/88 via-[#0e1f3a]/80 to-[#d4872f]/40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#27323f]/88 via-[#27323f]/80 to-[#2f6f6d]/40" />
         </div>
 
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -86,7 +86,7 @@ export function AboutPage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link
               to="/contact"
-              className="w-full sm:w-auto bg-[var(--saffron)] hover:bg-[#e68a2e] text-white px-7 py-3.5 rounded-xl inline-flex items-center justify-center gap-2 font-semibold transition-colors"
+              className="w-full sm:w-auto bg-[var(--saffron)] hover:bg-[#255a58] text-white px-7 py-3.5 rounded-xl inline-flex items-center justify-center gap-2 font-semibold transition-colors"
             >
               Plan Your Trip <ArrowRight className="size-4" />
             </Link>
@@ -226,7 +226,7 @@ export function AboutPage() {
           <div className="flex flex-col sm:flex-row justify-center gap-3">
             <Link
               to="/contact"
-              className="bg-[var(--saffron)] hover:bg-[#e68a2e] text-white px-8 py-3.5 rounded-xl inline-flex items-center justify-center gap-2 font-semibold transition-colors"
+              className="bg-[var(--saffron)] hover:bg-[#255a58] text-white px-8 py-3.5 rounded-xl inline-flex items-center justify-center gap-2 font-semibold transition-colors"
             >
               Plan Your Trip <ArrowRight className="size-4" />
             </Link>
@@ -234,7 +234,7 @@ export function AboutPage() {
               href="https://wa.me/919544968931?text=Hi%2C%20I%20need%20a%20custom%20Kerala%20itinerary."
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[var(--deep-blue)] hover:bg-[#10264a] text-white px-8 py-3.5 rounded-xl font-semibold transition-colors"
+              className="bg-[var(--deep-blue)] hover:bg-[#1c252f] text-white px-8 py-3.5 rounded-xl font-semibold transition-colors"
             >
               Chat on WhatsApp
             </a>

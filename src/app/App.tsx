@@ -41,7 +41,7 @@ function StickyMobileCTA() {
       </a>
       <a
         href="/contact"
-        className="flex-1 flex flex-col items-center justify-center py-3 gap-0.5 bg-[var(--saffron)] text-white active:bg-[#e68a2e]"
+        className="flex-1 flex flex-col items-center justify-center py-3 gap-0.5 bg-[var(--saffron)] text-white active:bg-[#255a58]"
       >
         <svg viewBox="0 0 24 24" className="w-5 h-5 fill-none stroke-current stroke-2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />

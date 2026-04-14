@@ -129,7 +129,7 @@ export function ContactPage() {
                 <div className="border-t border-gray-100 pt-6 flex flex-col sm:flex-row gap-4">
                   <a
                     href="tel:+919544968931"
-                    className="flex items-center justify-center gap-2 bg-[var(--saffron)] hover:bg-[#e68a2e] text-white px-6 py-3 rounded-lg transition-colors font-medium flex-1"
+                    className="flex items-center justify-center gap-2 bg-[var(--saffron)] hover:bg-[#255a58] text-white px-6 py-3 rounded-lg transition-colors font-medium flex-1"
                   >
                     <Phone className="size-5" />
                     Call +91 95449 68931
