@@ -117,7 +117,7 @@ export function HomePage() {
               Get a Free Quote
             </Link>
             <a
-              href="tel:+919544968931"
+              href="tel:+919947091445"
               className="w-full sm:w-auto bg-[var(--deep-blue)]/80 hover:bg-[var(--deep-blue)] text-white px-7 py-3 rounded-lg border border-white/20 transition-colors font-medium inline-flex items-center justify-center gap-2"
             >
               <Phone className="size-4" /> Book Your Ride
@@ -364,7 +364,7 @@ export function HomePage() {
               Plan Your Trip <ArrowRight className="size-4" />
             </Link>
             <a
-              href="tel:+919544968931"
+              href="tel:+919947091445"
               className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white px-8 py-3 rounded-lg border border-white/30 transition-colors font-medium inline-flex items-center gap-2"
             >
               <Phone className="size-4" /> Call Us Now

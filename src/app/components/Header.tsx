@@ -56,7 +56,7 @@ export function Header() {
             <Phone className="size-5" />
             <div>
               <div className="text-xs text-gray-600">Call us</div>
-              <div className="font-semibold">+91 95449 68931</div>
+              <div className="font-semibold">+91 9947 091445</div>
             </div>
           </div>
 
@@ -91,11 +91,11 @@ export function Header() {
             ))}
             {/* Phone in mobile menu */}
             <a
-              href="tel:+919544968931"
+              href="tel:+919947091445"
               className="flex items-center gap-3 py-3 px-3 mt-1 rounded-md text-[var(--deep-blue)] hover:bg-blue-50 transition-colors"
             >
               <Phone className="size-5" />
-              <span className="font-semibold">+91 95449 68931</span>
+              <span className="font-semibold">+91 9947 091445</span>
             </a>
           </nav>
         </div>

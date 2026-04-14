@@ -34,9 +34,6 @@ export function ContactPage() {
                     </div>
                     <div>
                       <h3 className="text-sm text-gray-600 mb-1">Phone</h3>
-                      <a href="tel:+919544968931" className="block text-[var(--deep-blue)] hover:text-[var(--saffron)] transition-colors font-medium">
-                        +91 95449 68931
-                      </a>
                       <a href="tel:+919947091445" className="block text-[var(--deep-blue)] hover:text-[var(--saffron)] transition-colors font-medium">
                         +91 9947 091445
                       </a>
@@ -102,7 +99,7 @@ export function ContactPage() {
                 <p className="text-gray-600 mb-8">The fastest way to reach us! Click below to start a conversation — we typically respond within minutes.</p>
 
                 <a
-                  href="https://wa.me/919544968931?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20your%20tour%20packages."
+                  href="https://wa.me/919947091445?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20your%20tour%20packages."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-3 bg-green-500 hover:bg-green-600 text-white px-6 py-4 rounded-xl transition-colors text-lg font-semibold mb-8 w-full"
@@ -116,7 +113,7 @@ export function ContactPage() {
                   {quickMessages.map((msg) => (
                     <a
                       key={msg.label}
-                      href={`https://wa.me/919544968931?text=${encodeURIComponent(msg.text)}`}
+                      href={`https://wa.me/919947091445?text=${encodeURIComponent(msg.text)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-3 border-2 border-green-200 hover:border-green-500 hover:bg-green-50 text-[var(--deep-blue)] px-4 py-3 rounded-lg transition-colors text-sm font-medium"
@@ -128,11 +125,11 @@ export function ContactPage() {
 
                 <div className="border-t border-gray-100 pt-6 flex flex-col sm:flex-row gap-4">
                   <a
-                    href="tel:+919544968931"
+                    href="tel:+919947091445"
                     className="flex items-center justify-center gap-2 bg-[var(--saffron)] hover:bg-[#e68a2e] text-white px-6 py-3 rounded-lg transition-colors font-medium flex-1"
                   >
                     <Phone className="size-5" />
-                    Call +91 95449 68931
+                    Call +91 9947 091445
                   </a>
                   <a
                     href="tel:+919947091445"
