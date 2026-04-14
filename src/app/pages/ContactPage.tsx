@@ -62,8 +62,8 @@ export function ContactPage() {
                     <div>
                       <h3 className="text-sm text-gray-600 mb-2">Our Location</h3>
                       <p className="text-[var(--deep-blue)] text-sm">
-                        <span className="font-semibold">Kochi</span><br />
-                        Kochi, Kerala, India
+                        <span className="font-semibold">Alleppey</span><br />
+                        Alleppey, Kerala, India
                       </p>
                     </div>
                   </div>
@@ -158,8 +158,8 @@ export function ContactPage() {
                 <MapPin className="size-6 text-[var(--saffron)]" />
               </div>
               <div>
-                <h3 className="font-semibold text-[var(--deep-blue)] text-lg mb-1">Kochi</h3>
-                <p className="text-gray-600">Kochi, Kerala, India</p>
+                <h3 className="font-semibold text-[var(--deep-blue)] text-lg mb-1">Alleppey</h3>
+                <p className="text-gray-600">Alleppey, Kerala, India</p>
               </div>
             </div>
           </div>

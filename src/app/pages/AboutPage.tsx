@@ -1,172 +1,244 @@
-import { Heart, Users, Globe, Award } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import {
+  ArrowRight,
+  CheckCircle2,
+  ClipboardList,
+  Headphones,
+  MapPin,
+  MessageSquare,
+  Shield,
+  Star,
+  Users,
+} from 'lucide-react';
 
 export function AboutPage() {
-  const values = [
+  const whyChooseUs = [
+    'Local drivers and coordinators who know Kerala roads and travel timings',
+    'Transparent pricing with clear inclusions before you confirm',
+    'Flexible itineraries for couples, families, and group travel',
+    'Quick support on call and WhatsApp during your trip',
+    'Well-maintained vehicles for budget and premium preferences',
+    'Practical route planning to reduce travel fatigue',
+  ];
+
+  const testimonials = [
     {
-      icon: Heart,
-      title: 'Meaningful Experiences',
-      description: 'We believe travel should touch the soul and create lasting memories beyond just sightseeing'
+      name: 'Neha Sharma',
+      text: 'Everything was exactly as discussed. Driver arrived on time each day and the plan was smooth.',
     },
     {
-      icon: Users,
-      title: 'Family-Friendly',
-      description: 'Our tours are designed for individuals, families, and groups of all ages and backgrounds'
+      name: 'Arjun Menon',
+      text: 'Clear pricing, quick communication, and good local recommendations. Very reliable service.',
     },
     {
-      icon: Globe,
-      title: 'Cultural Respect',
-      description: 'We honor and celebrate the diversity of India\'s traditions with deep reverence'
+      name: 'Fathima K',
+      text: 'We changed our plan midway and they handled it quickly without confusion.',
+    },
+  ];
+
+  const steps = [
+    {
+      title: 'Inquiry',
+      description: 'Share your dates, group size, budget, and places you want to visit.',
+      icon: MessageSquare,
     },
     {
-      icon: Award,
-      title: 'Quality Service',
-      description: 'Excellence in every detail, from planning to execution, ensuring your comfort and satisfaction'
-    }
+      title: 'Planning',
+      description: 'Receive route options, vehicle choices, and a clear quote with inclusions.',
+      icon: ClipboardList,
+    },
+    {
+      title: 'Confirmation',
+      description: 'Approve your plan and we finalize transport, schedule, and support details.',
+      icon: CheckCircle2,
+    },
+    {
+      title: 'Travel Support',
+      description: 'Get on-trip assistance via call and WhatsApp from our local team.',
+      icon: Headphones,
+    },
   ];
 
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative h-[400px] flex items-center justify-center overflow-hidden">
+    <div className="min-h-screen bg-white">
+      {/* Hero */}
+      <section className="relative overflow-hidden py-20 sm:py-24 bg-[var(--deep-blue)] text-white">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1649996255271-9a20a441d25d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzYWNyZWQlMjBpbmRpYSUyMHNwaXJpdHVhbCUyMGpvdXJuZXl8ZW58MXx8fHwxNzY5OTM3MDAxfDA&ixlib=rb-4.1.0&q=80&w=1080"
-            alt="Sacred India"
+            src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?q=80&w=1600&auto=format&fit=crop"
+            alt="Kerala travel view"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0e1f3a]/88 via-[#0e1f3a]/80 to-[#d4872f]/40" />
         </div>
-        
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-          <h1 className="text-3xl sm:text-5xl md:text-6xl mb-4">About Scenic Safaris</h1>
-          <p className="text-xl text-gray-200">Creating journeys that inspire, enlighten, and transform</p>
-        </div>
-      </section>
 
-      {/* Main Content */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-4xl mb-6 text-[var(--deep-blue)]">Our Story</h2>
-              <div className="space-y-4 text-gray-700 leading-relaxed">
-                <p>
-                  Scenic Safaris was born from a deep appreciation for India's incredible diversity – its sacred 
-                  temples, rich cultural heritage, and breathtaking natural beauty. We understand that travel is 
-                  more than just visiting places; it's about experiencing the essence of a destination and 
-                  connecting with something greater.
-                </p>
-                <p>
-                  Our team consists of passionate travel professionals who have spent years exploring India's 
-                  hidden gems and well-known treasures. We believe in creating journeys that are not just vacations, 
-                  but transformative experiences that stay with you long after you return home.
-                </p>
-                <p>
-                  Whether you're seeking spiritual enlightenment at ancient pilgrimage sites, wanting to immerse 
-                  yourself in local traditions and heritage, or simply looking for a peaceful retreat in the hills, 
-                  we design each journey with care, authenticity, and respect for the places we visit.
-                </p>
-              </div>
-            </div>
-            
-            <div className="relative h-[260px] sm:h-[380px] lg:h-[500px] rounded-xl overflow-hidden shadow-2xl">
-              <img
-                src="https://images.unsplash.com/photo-1765700325742-b52f566bf6dd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjBjdWx0dXJhbCUyMGhlcml0YWdlJTIwdHJhdmVsfGVufDF8fHx8MTc2OTkzNzAwMXww&ixlib=rb-4.1.0&q=80&w=1080"
-                alt="Indian heritage"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Our Mission */}
-      <section className="py-20 bg-[var(--beige)]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl mb-6 text-[var(--deep-blue)]">Our Mission</h2>
-          <p className="text-xl text-gray-700 leading-relaxed">
-            To provide meaningful, spiritual, cultural, and nature-focused travel experiences that honor India's 
-            heritage while ensuring comfort, safety, and authenticity. We aim to create journeys that are not just 
-            trips, but life-enriching experiences for individuals, families, and groups from all walks of life.
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-[var(--saffron)] uppercase tracking-widest text-xs sm:text-sm font-semibold mb-3">
+            About Scenic Safaris Tours & Travels
           </p>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight max-w-4xl mx-auto mb-4">
+            Travel Kerala with a Team That Knows It First-Hand
+          </h1>
+          <p className="text-sm sm:text-base md:text-lg text-gray-200 max-w-3xl mx-auto mb-8">
+            We plan practical itineraries, provide reliable transport, and stay available throughout your trip so
+            you can travel with confidence.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <Link
+              to="/contact"
+              className="w-full sm:w-auto bg-[var(--saffron)] hover:bg-[#e68a2e] text-white px-7 py-3.5 rounded-xl inline-flex items-center justify-center gap-2 font-semibold transition-colors"
+            >
+              Plan Your Trip <ArrowRight className="size-4" />
+            </Link>
+            <Link
+              to="/contact"
+              className="w-full sm:w-auto bg-white/15 hover:bg-white/25 border border-white/30 text-white px-7 py-3.5 rounded-xl font-semibold text-center transition-colors"
+            >
+              Contact Us
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* Our Values */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl mb-4 text-[var(--deep-blue)]">Our Core Values</h2>
-            <p className="text-lg text-gray-600">The principles that guide everything we do</p>
+      {/* Who We Are */}
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+          <div>
+            <p className="text-[var(--saffron)] uppercase tracking-widest text-xs font-semibold mb-2">Who We Are</p>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[var(--deep-blue)] mb-4">
+              Local Expertise, Reliable Execution
+            </h2>
+            <div className="space-y-4 text-gray-700 leading-relaxed text-sm sm:text-base">
+              <p>
+                Scenic Safaris is a Kerala-based travel and cab service team focused on real execution, not generic
+                brochure plans. We coordinate routes, transport, and support with local on-ground knowledge.
+              </p>
+              <p>
+                Our travellers include both budget-conscious and premium guests aged 25–55. We tailor each plan to
+                your comfort level, pace, and priorities.
+              </p>
+              <p>
+                From first enquiry to final drop-off, our goal is simple: clear communication, dependable service,
+                and stress-free travel.
+              </p>
+            </div>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((value, index) => (
-              <div 
-                key={index}
-                className="bg-[var(--beige)] p-6 rounded-xl text-center hover:shadow-lg transition-shadow"
-              >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-[var(--saffron)] rounded-full mb-4">
-                  <value.icon className="size-8 text-white" />
-                </div>
-                <h3 className="text-xl mb-3 text-[var(--deep-blue)]">{value.title}</h3>
-                <p className="text-gray-600">{value.description}</p>
+
+          <div className="relative h-[280px] sm:h-[360px] lg:h-[430px] rounded-2xl overflow-hidden shadow-xl">
+            <img
+              src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1400&auto=format&fit=crop"
+              alt="Kerala landscape"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="py-16 bg-[var(--beige)]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <p className="text-[var(--saffron)] uppercase tracking-widest text-xs font-semibold mb-2">Why Choose Us</p>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[var(--deep-blue)]">What You Actually Get</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {whyChooseUs.map((point) => (
+              <div key={point} className="bg-white rounded-xl border border-gray-100 p-4 sm:p-5 flex items-start gap-3">
+                <CheckCircle2 className="size-5 text-[var(--saffron)] mt-0.5 flex-shrink-0" />
+                <p className="text-gray-700 text-sm sm:text-base">{point}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Who We Serve */}
-      <section className="py-20 bg-[var(--deep-blue)] text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="relative h-[220px] sm:h-[320px] lg:h-[400px] rounded-xl overflow-hidden shadow-2xl">
-              <img
-                src="https://images.unsplash.com/photo-1763480005793-501a0cbe1ac9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoaW1hbGF5YW4lMjBtb3VudGFpbnMlMjBzZXJlbmUlMjBsYW5kc2NhcGV8ZW58MXx8fHwxNzY5OTM3MDAwfDA&ixlib=rb-4.1.0&q=80&w=1080"
-                alt="Serene landscape"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            
-            <div>
-              <h2 className="text-4xl mb-6">Designed for Everyone</h2>
-              <div className="space-y-4 text-gray-200 leading-relaxed">
-                <p>
-                  <strong className="text-white">Solo Travelers:</strong> Find peace and spiritual connection on our 
-                  carefully guided journeys designed for individual exploration and reflection.
-                </p>
-                <p>
-                  <strong className="text-white">Families:</strong> Create lasting memories with itineraries that 
-                  cater to all age groups, ensuring comfort and engagement for everyone.
-                </p>
-                <p>
-                  <strong className="text-white">Groups:</strong> Whether it's a religious organization, cultural 
-                  society, or friends traveling together, we customize experiences for groups of any size.
-                </p>
-                <p>
-                  <strong className="text-white">International Visitors:</strong> Discover the real India with 
-                  local insights, cultural context, and seamless logistics.
-                </p>
+      {/* Trust & Proof */}
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <p className="text-[var(--saffron)] uppercase tracking-widest text-xs font-semibold mb-2">Trust & Proof</p>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[var(--deep-blue)]">Built on Consistency</h2>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            {[
+              { label: 'Trips Completed', value: '1200+' },
+              { label: 'Happy Travellers', value: '500+' },
+              { label: 'Years of Service', value: '8+' },
+              { label: 'Average Rating', value: '4.9/5' },
+            ].map((item) => (
+              <div key={item.label} className="bg-[var(--deep-blue)] text-white rounded-xl p-4 text-center">
+                <p className="text-2xl sm:text-3xl font-bold text-[var(--saffron)]">{item.value}</p>
+                <p className="text-xs sm:text-sm text-gray-200 mt-1">{item.label}</p>
               </div>
-            </div>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {testimonials.map((t) => (
+              <div key={t.name} className="bg-[var(--beige)] border border-gray-100 rounded-xl p-5">
+                <div className="flex gap-0.5 mb-3">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star key={i} className="size-4 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+                <p className="text-gray-700 text-sm leading-relaxed mb-3">"{t.text}"</p>
+                <p className="text-[var(--deep-blue)] text-sm font-semibold">{t.name}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
+      {/* How We Work */}
+      <section className="py-16 bg-[var(--deep-blue)] text-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <p className="text-[var(--saffron)] uppercase tracking-widest text-xs font-semibold mb-2">How We Work</p>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">Simple Process. Clear Communication.</h2>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {steps.map((step, index) => (
+              <div key={step.title} className="bg-white/10 border border-white/15 rounded-xl p-5">
+                <div className="flex items-center justify-between mb-4">
+                  <step.icon className="size-5 text-[var(--saffron)]" />
+                  <span className="text-xs text-gray-300">0{index + 1}</span>
+                </div>
+                <h3 className="font-semibold text-white mb-2">{step.title}</h3>
+                <p className="text-xs sm:text-sm text-gray-200 leading-relaxed">{step.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Closing CTA */}
       <section className="py-16 bg-[var(--beige)]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl mb-4 text-[var(--deep-blue)]">Begin Your Journey With Us</h2>
-          <p className="text-lg text-gray-700 mb-6">
-            Travelling – It leaves you speechless, then turns you into a storyteller
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[var(--deep-blue)] mb-3">
+            Get Your Custom Itinerary Today
+          </h2>
+          <p className="text-gray-700 text-sm sm:text-base mb-7">
+            Share your travel plan and get a practical itinerary with a clear quote.
           </p>
-          <a 
-            href="/contact"
-            className="bg-[var(--saffron)] hover:bg-[#e68a2e] text-white px-8 py-3 rounded-lg inline-block transition-colors"
-          >
-            Get in Touch
-          </a>
+          <div className="flex flex-col sm:flex-row justify-center gap-3">
+            <Link
+              to="/contact"
+              className="bg-[var(--saffron)] hover:bg-[#e68a2e] text-white px-8 py-3.5 rounded-xl inline-flex items-center justify-center gap-2 font-semibold transition-colors"
+            >
+              Plan Your Trip <ArrowRight className="size-4" />
+            </Link>
+            <a
+              href="https://wa.me/919544968931?text=Hi%2C%20I%20need%20a%20custom%20Kerala%20itinerary."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[var(--deep-blue)] hover:bg-[#10264a] text-white px-8 py-3.5 rounded-xl font-semibold transition-colors"
+            >
+              Chat on WhatsApp
+            </a>
+          </div>
         </div>
       </section>
     </div>
